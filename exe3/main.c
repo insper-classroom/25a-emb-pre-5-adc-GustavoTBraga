@@ -25,13 +25,22 @@ void data_task(void *p) {
 
 void process_task(void *p) {
     int data = 0;
+    int contador = 0;
+    int media = 0;
+    int valores[5];
 
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
             // implementar filtro aqui!
-
-
-
+            if (contador >= 5) {
+                for (int i = 0; i < 5; i++) {
+                    media += valores[i];
+                }
+                media /= 5;
+            } else {
+                valores[contador] = data;
+                contador++;
+            }
 
             // deixar esse delay!
             vTaskDelay(pdMS_TO_TICKS(50));
