@@ -39,6 +39,7 @@ void process_task(void *p) {
                 media /= 5;
                 contador = 0;
                 printf("Média: %d\n", media);
+                media = 0;
             } else {
                 valores[contador] = data;
                 contador++;
