@@ -40,7 +40,9 @@ void process_task(void *p) {
                 contador = 0;
                 printf("%d\n", media);
                 media = 0;
-            } else {
+            } 
+            
+            if (contador < 5) {
                 valores[contador] = data;
                 contador++;
             }
